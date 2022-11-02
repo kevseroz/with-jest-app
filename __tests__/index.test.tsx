@@ -1,14 +1,13 @@
-import { render, screen } from '@testing-library/react'
-import Home from '@/pages/index'
+import { handleChange } from "../helper";
 
-describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Home />)
-
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
-
-    expect(heading).toBeInTheDocument()
-  })
-})
+describe("Home", () => {
+  it("romanian number test", () => {
+    expect(handleChange(789)).toBe("DCCLXXXIX");
+  });
+  it("romanian number test1", () => {
+    expect(handleChange(365)).toBe("CCCLXV");
+  });
+  it("romanian number test2", () => {
+    expect(handleChange(902)).toBe("CMII");
+  });
+});

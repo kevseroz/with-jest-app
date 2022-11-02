@@ -30,5 +30,5 @@ export const handleChange = (num: number) => {
     })
     .reverse()
     .join("")
-    .trim();
+    .replace(/ /g, "");
 };

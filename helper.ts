@@ -17,4 +17,18 @@ export const handleChange = (num: number) => {
     })[0];
     romansArray.push(val);
   }
+
+  //get rid of all the null values
+  const result = romansArray.filter((val) => {
+    return val != null || val != " ";
+  });
+
+  //return the string with the roman number
+  return result
+    .map(function (value, key) {
+      return result[key][numberUnit[key]];
+    })
+    .reverse()
+    .join("")
+    .trim();
 };
